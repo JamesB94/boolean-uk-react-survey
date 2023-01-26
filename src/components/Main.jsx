@@ -9,9 +9,10 @@ function Main() {
     const [duckFeature, setDuckFeature] = useState("")
     const [duckConcistancy, setDuckConcistancy] = useState("")
     const [duckColor, setDuckColor] = useState("")
+    const [duckActivity, setDuckActivity] = useState("")
+
     const [duckEmail, setDuckEmail] = useState("")
     const [usersName, setUsersName] = useState("")
-    const [duckActivity, setDuckActivity] = useState("")
     const [comment, setcomment] = useState("")
 
 
@@ -20,6 +21,7 @@ function Main() {
   
 
   const handleChange = (e) => {
+    setDuckFeature(duckFeature)
     setDuckFeature(e.target.value);
    //console.log('here is  ' + (e.target.value))
   };
@@ -54,12 +56,51 @@ function Main() {
     //console.log('i like to  ' + (e.target.value))
   }
 
+  const setDuckFeatureRef1 = useRef(null);
+  const setDuckFeatureRef2 = useRef(null);
+  const setDuckFeatureRef3 = useRef(null);
+  const setDuckFeatureRef4 = useRef(null);
+
+  const setDuckConcistancyRef1 = useRef(null);
+  const setDuckConcistancyRef2 = useRef(null);
+  const setDuckConcistancyRef3 = useRef(null);
+  const setDuckConcistancyRef4 = useRef(null);
+
+  const setDuckColorRef1 = useRef(null);
+  const setDuckColorRef2 = useRef(null);
+  const setDuckColorRef3 = useRef(null);
+  const setDuckColorRef4 = useRef(null);
+
+  const duckActivityRef1 = useRef(null);
+  const duckActivityRef2 = useRef(null);
+  const duckActivityRef3 = useRef(null);
+  const duckActivityRef4 = useRef(null);
+
+  
+
   const formReset = () => {
-    //location.reload();
-    //formObj.reset()
-      setDuckFeature(" "),
-      setDuckConcistancy(" "),
-      setDuckColor(" "),
+    setDuckFeatureRef1.current.checked = false;
+    setDuckFeatureRef2.current.checked = false;
+    setDuckFeatureRef3.current.checked = false;
+    setDuckFeatureRef4.current.checked = false;
+
+    setDuckConcistancyRef1.current.checked = false;
+    setDuckConcistancyRef2.current.checked = false;
+    setDuckConcistancyRef3.current.checked = false;
+    setDuckConcistancyRef4.current.checked = false;
+
+    setDuckColorRef1.current.checked = false;
+    setDuckColorRef2.current.checked = false;
+    setDuckColorRef3.current.checked = false;
+    setDuckColorRef4.current.checked = false;
+
+    duckActivityRef1.current.checked = false;
+    duckActivityRef2.current.checked = false;
+    duckActivityRef3.current.checked = false;
+    duckActivityRef4.current.checked = false;
+
+
+    
       setUsersName(" "),
       setDuckEmail(" "),
       setDuckActivity(" "),
@@ -108,6 +149,7 @@ function Main() {
             <ul>
               <li>
                   <input
+                    ref={setDuckFeatureRef1}
                     id="yellowDuck"
                     name="feature"
                     type="radio"
@@ -121,6 +163,7 @@ function Main() {
               </li>
               <li>               
                   <input
+                  ref={setDuckFeatureRef2}
                     id="big"
                     name="feature"
                     type="radio"
@@ -134,6 +177,7 @@ function Main() {
               <li>
                 
                   <input
+                  ref={setDuckFeatureRef3}
                     id="logo"
                     name="feature"
                     type="radio"
@@ -147,6 +191,7 @@ function Main() {
               </li>
               <li>
                   <input
+                  ref={setDuckFeatureRef4}
                     id="squeks"
                     name="feature"
                     type="radio"
@@ -167,19 +212,19 @@ function Main() {
 
             <ul>
               <li>
-                <input id="concistancy-one" type="radio" name="concistancy" value="1"  onChange={handleConcistancy} />
+                <input ref={setDuckConcistancyRef1} id="concistancy-one" type="radio" name="concistancy" value="1"  onChange={handleConcistancy} />
                 <label htmlFor="concistancy-one" >1</label>
               </li>
               <li>
-                <input id="concistancy-two" type="radio" name="concistancy" value="2" onChange={handleConcistancy} />
+                <input ref={setDuckConcistancyRef2} id="concistancy-two" type="radio" name="concistancy" value="2" onChange={handleConcistancy} />
                 <label htmlFor="concistancy-two">2</label>
               </li>
               <li>
-                <input id="concistancy-three" type="radio" name="concistancy" value="3" onChange={handleConcistancy} />
+                <input ref={setDuckConcistancyRef3} id="concistancy-three" type="radio" name="concistancy" value="3" onChange={handleConcistancy} />
                 <label htmlFor="concistancy-three">3</label>
               </li>
               <li>
-                <input id="concistancy-four" type="radio" name="concistancy" value="4" onChange={handleConcistancy} />
+                <input ref={setDuckConcistancyRef4} id="concistancy-four" type="radio" name="concistancy" value="4" onChange={handleConcistancy} />
                 <label htmlFor="concistancy-four">4</label>
               </li>
             </ul>
@@ -192,19 +237,19 @@ function Main() {
 
             <ul>
               <li>
-                <input id="color-one" type="radio" name="color" value="1" onChange={handleColor}/>
+                <input ref={setDuckColorRef1} id="color-one" type="radio" name="color" value="1" onChange={handleColor}/>
                 <label htmlFor="color-one">1</label>
               </li>
-              <li>
-                <input id="color-two" type="radio" name="color" value="2" onChange={handleColor}/>
+              <li> 
+                <input ref={setDuckColorRef2} id="color-two" type="radio" name="color" value="2" onChange={handleColor}/>
                 <label htmlFor="color-two">2</label>
               </li>
               <li>
-                <input id="color-three" type="radio" name="color" value="3"  onChange={handleColor}/>
+                <input ref={setDuckColorRef3} id="color-three" type="radio" name="color" value="3"  onChange={handleColor}/>
                 <label htmlFor="color-three">3</label>
               </li>
               <li>
-                <input id="color-four" type="radio" name="color" value="4"  onChange={handleColor}/>
+                <input ref={setDuckColorRef4} id="color-four" type="radio" name="color" value="4"  onChange={handleColor}/>
                 <label htmlFor="color-four">4</label>
               </li>
             </ul>
@@ -217,28 +262,28 @@ function Main() {
             <ul>
               <li>
                 
-                  <input id="swiming" name="spend-time" type="radio" value="swimming" onChange={gatherActivity} />
+                  <input ref={duckActivityRef1} id="swiming" name="spend-time" type="radio" value="swimming" onChange={gatherActivity} />
                   <label htmlFor="swiming">
                   Swimming
                 </label>
               </li>
               <li>
                 
-                  <input id="bathing" name="spend-time" type="radio" value="bathing" onChange={gatherActivity} />
+                  <input ref={duckActivityRef2} id="bathing" name="spend-time" type="radio" value="bathing" onChange={gatherActivity} />
                   <label htmlFor="bathing">
                   Bathing
                 </label>
               </li>
               <li>
                  
-                  <input id="chatting" name="spend-time" type="radio" value="chatting" onChange={gatherActivity} />
+                  <input ref={duckActivityRef3} id="chatting" name="spend-time" type="radio" value="chatting" onChange={gatherActivity} />
                   <label htmlFor="chatting">
                   Chatting
                 </label>
               </li>
               <li>
                 
-                  <input id="noTime" name="spend-time" type="radio" value="noTime" onChange={gatherActivity} />
+                  <input ref={duckActivityRef4} id="noTime" name="spend-time" type="radio" value="noTime" onChange={gatherActivity} />
                   <label htmlFor="noTime">
                   I don't like to spend time with it
                 </label>
